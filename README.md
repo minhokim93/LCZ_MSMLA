@@ -12,6 +12,8 @@ All experiments were trained from scratch and were performed using an Intel Core
 
 LCZ Classification
 ---------------------
+Classification accuracy results of benchmark and proposed models using “All + Ancillary” (Sentinel-2 10 bands, OSM, DSM, NLCM) data with 48x48 pixel patches.
+
 
 | Model | Trainable Parameters | OA (%) | WA (%) | OA<sub>BU</sub> (%) | OA<sub>N</sub> (%) | F1 (%) |
 |      :---:       |      :---:       |      :---:       |      :---:       |      :---:       |      :---:       |      :---:       |
