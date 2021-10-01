@@ -8,10 +8,10 @@ The model is shown below:
 
 ![alt text](./images/msmla.jpg)
 
-Environment
----------------------
 All experiments were trained from scratch and were performed using an Intel Core i7-6700 CPU at 3.40 GHz and an NVIDIA GeForce RTX 2070 Super Graphics Processor Unit (GPU) with 8 GB of memory. Python 3.7.9 was used with Tensorflow 2.3.0. For training hyperparameters, an early stop of 15 epochs, a learning rate of 0.002, and a decay factor of 0.004 were used. The adaptive moment estimation (adam) optimizer was chosen to minimize the cross-entropy loss function. Filter weights were initialized using “He normal” initialization.
 
+LCZ Classification
+---------------------
 For comparisons with other **state-of-the-art, deep learning-based LCZ classification models**, refer to the following papers:
 
 1. **CNN** 
