@@ -6,7 +6,7 @@ The code is provided for the Multi-Scale, Multi-Level Attention Network (MSMLA) 
 
 The model is shown below:
 
-![alt text](./msmla.png)
+![alt text](./msmla.jpg)
 
 
 Citation
