@@ -15,17 +15,17 @@ LCZ Classification
 For comparisons with other **state-of-the-art, deep learning-based LCZ classification models**, refer to the following papers:
 
 1. **CNN** 
-Rosentreter, J., Hagensieker, R., & Waske, B. (2020). Towards large-scale mapping of local climate zones using multitemporal Sentinel 2 data and convolutional neural networks. Remote Sensing of Environment, 237, 111472. [(Link)](https://doi.org/10.1016/j.rse.2019.111472)
+Rosentreter, J., Hagensieker, R., & Waske, B. (2020). Towards large-scale mapping of local climate zones using multitemporal Sentinel 2 data and convolutional neural networks. Remote Sensing of Environment, 237, 111472. ([Link])(https://doi.org/10.1016/j.rse.2019.111472)
 
 2. **LCZNet** 
-Liu, S., & Shi, Q. (2020). Local climate zone mapping as remote sensing scene classification using deep learning: A case study of metropolitan China. ISPRS Journal of Photogrammetry and Remote Sensing, 164, 229-242. [(Link)](https://doi.org/10.1016/j.isprsjprs.2020.04.008)
+Liu, S., & Shi, Q. (2020). Local climate zone mapping as remote sensing scene classification using deep learning: A case study of metropolitan China. ISPRS Journal of Photogrammetry and Remote Sensing, 164, 229-242. ([Link])(https://doi.org/10.1016/j.isprsjprs.2020.04.008)
 
 3. **Sen2LCZ-Net** 
-Qiu, C., Tong, X., Schmitt, M., Bechtel, B., & Zhu, X. X. (2020). Multilevel feature fusion-based CNN for local climate zone classification from sentinel-2 images: Benchmark results on the So2Sat LCZ42 dataset. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 13, 2793-2806. [(Link)](https://ieeexplore.ieee.org/abstract/document/9103196)
+Qiu, C., Tong, X., Schmitt, M., Bechtel, B., & Zhu, X. X. (2020). Multilevel feature fusion-based CNN for local climate zone classification from sentinel-2 images: Benchmark results on the So2Sat LCZ42 dataset. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 13, 2793-2806. ([Link])(https://ieeexplore.ieee.org/abstract/document/9103196)
 
 Citation
 ---------------------
-**Please cite the original paper if this code is useful and helpful for your research.**
+**Please cite the journal paper if this code is useful and helpful for your research.**
 
     @article{kim2021local,
       title={Local climate zone classification using a multi-scale, multi-level attention network},
