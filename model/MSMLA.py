@@ -1,3 +1,8 @@
+"""
+@author: Minho Kim
+Contact : mhk93@snu.ac.kr
+
+"""
 
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import *
