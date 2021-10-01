@@ -1,6 +1,6 @@
 # Local climate zone classification using a multi-scale, multi-level attention network
-[Minho Kim](minho.me), Doyoung Jeong, [Yongil Kim](https://www.researchgate.net/profile/Yongil-Kim-2)
----------------------
+Authors: [Minho Kim](minho.me), Doyoung Jeong, [Yongil Kim](https://www.researchgate.net/profile/Yongil-Kim-2)
+
 
 The code is provided for the Multi-Scale, Multi-Level Attention Network (MSMLA) proposed in [Local climate zone classification using a multi-scale, multi-level attention network](https://www.sciencedirect.com/science/article/abs/pii/S0924271621002537) accepted in ISPRS J. 
 
@@ -23,14 +23,13 @@ LCZ Classification
 
 <sup>*</sup> Proposed models
 
-
----------------------
 **:fire: State-of-the-art, Deep Learning-based LCZ Classification Models**
-1. **Sen2LCZ-Net** 
+---------------------
+1. **[Sen2LCZ-Net]** 
 Qiu, C., Tong, X., Schmitt, M., Bechtel, B., & Zhu, X. X. (2020). Multilevel feature fusion-based CNN for local climate zone classification from sentinel-2 images: Benchmark results on the So2Sat LCZ42 dataset. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 13, 2793-2806.
-2. **LCZNet** 
+2. **[LCZNet]** 
 Liu, S., & Shi, Q. (2020). Local climate zone mapping as remote sensing scene classification using deep learning: A case study of metropolitan China. ISPRS Journal of Photogrammetry and Remote Sensing, 164, 229-242. 
-3. **CNN** 
+3. **[CNN]** 
 Rosentreter, J., Hagensieker, R., & Waske, B. (2020). Towards large-scale mapping of local climate zones using multitemporal Sentinel 2 data and convolutional neural networks. Remote Sensing of Environment, 237, 111472.
 
 Citation
