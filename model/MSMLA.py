@@ -10,6 +10,7 @@ from tensorflow.keras.layers import *
 from utils import se_convolutional_block, se_identity_block
 from utils import cbam_block as cbam
 
+# MSMLA18 and MSMLA50 models used as MSMLA-net
 
 def MSMLA18(input_shape):
 
