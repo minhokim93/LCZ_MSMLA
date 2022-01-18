@@ -1,5 +1,5 @@
 # Local Climate Zone Classification Using a Multi-Scale, Multi-Level Attention Network
-Authors: [Minho Kim](minho.me), Doyoung Jeong, [Yongil Kim](https://www.researchgate.net/profile/Yongil-Kim-2)
+Authors: [Minho Kim](https://minho.me), Doyoung Jeong, [Yongil Kim](https://www.researchgate.net/profile/Yongil-Kim-2)
 
 
 The code is provided for the Multi-Scale, Multi-Level Attention Network (MSMLA) proposed in [Local climate zone classification using a multi-scale, multi-level attention network](https://www.sciencedirect.com/science/article/abs/pii/S0924271621002537) accepted in ISPRS J. 
