@@ -1,5 +1,7 @@
-# @Date:   2019-12-31T13:03:11+01:00
-# @Last modified time: 2019-12-31T13:23:43+01:00
+'''
+Original Source: https://github.com/ChunpingQiu/benchmark-on-So2SatLCZ42-dataset-a-simple-tour/blob/master/lr.py
+
+'''
 
 import numpy as np
 from tensorflow.keras.callbacks import LearningRateScheduler

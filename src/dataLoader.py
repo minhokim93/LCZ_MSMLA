@@ -1,5 +1,10 @@
-# @Date:   2020-02-04T16:58:21+01:00
-# @Last modified time: 2020-02-20T20:20:22+01:00
+'''
+Author: Minho Kim, Doyoung Jeong
+Contact: mhk93@snu.ac.kr
+
+Based on: https://github.com/ChunpingQiu/benchmark-on-So2SatLCZ42-dataset-a-simple-tour/blob/master/lr.py
+
+'''
 
 from tensorflow.python.keras.utils.data_utils import Sequence
 import h5py
