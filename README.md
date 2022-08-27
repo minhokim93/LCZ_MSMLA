@@ -24,7 +24,7 @@ Usage
 ---------------------
 1. Install a new conda environment
 ```
-$ conda env create --name msmla--file environment.yml
+$ conda env create --name msmla --file environment.yml
 ```
 2. Activate the new environment and navigate to the "src" folder
 ```
