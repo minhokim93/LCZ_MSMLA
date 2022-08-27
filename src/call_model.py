@@ -14,7 +14,7 @@ def get_model(model, input_shape, d):
     # RESNET MODELS
     if model == 'MSMLA18':
         from model.MSMLA import MSMLA18
-        net = MSMLA18(input_shape, [d, 2*d, 3*d])
+        net = MSMLA18(input_shape, [d, 2*d, 3*d]) # Depth [d, 2*d, 3*d] inputted into utils se_convolutional_block and se_identity_block
         net.build(input_shape)
     elif model == 'MSMLA50':
         from model.MSMLA import MSMLA50

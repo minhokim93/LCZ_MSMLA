@@ -33,7 +33,7 @@ $ cd src
 ```
 3. Run the train.py code
 ```
-$ python main.py --path /YOUR/LOCAL/DIRECTORY/HERE/LCZ_MSMLA
+$ python main.py --path /YOUR/LOCAL/DIRECTORY/LCZ_MSMLA # Only change /YOUR/LOCAL/DIRECTORY without " "
 ```
 
 LCZ Classification

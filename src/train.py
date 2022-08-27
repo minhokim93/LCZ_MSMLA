@@ -29,8 +29,8 @@ np.random.seed(SEED)
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 
-gpus = tensorflow.config.experimental.list_physical_devices('GPU')
-print('Using device:', gpus)
+# gpus = tensorflow.config.experimental.list_physical_devices('GPU')
+# print('Using device:', gpus)
 
 # Main Functions
 def checknum(filename):
@@ -47,10 +47,6 @@ def checknum(filename):
   
         
 def jsondump(model, jsonfile, filename):
-    
-    print('Model : ', model)
-    print('jsonfile : ', jsonfile)
-    print('filename : ', filename)
 
     test_filename = os.path.join(os.path.dirname(filename), os.path.basename(filename).replace('train', 'val'))
 
@@ -136,10 +132,11 @@ if __name__ == '__main__':
     args = parser.parse_args()
     path = args.path # Set base path to "\LCZ_MSMLA\"
 
-    jsonfile = os.path.join(path, 'src/config_massive.json') # Set json path to call parameters (config_massive.json)
+    jsonfile = os.path.join(args.path, 'src/config_massive.json') # Set json path to call parameters (config_massive.json)
+    data_path = os.path.join(args.path, 'data') # Move train, test, val .h5 files into /LCZ_MSMLA/data
 
     # Load filenames
-    filelist = glob.glob(path + '/*.h5')
+    filelist = glob.glob(data_path + '/*.h5')
     filelist = [x for x in filelist if 'train' in x]
     train_filelist = [x for x in filelist if '_all_win' in os.path.basename(x)]
 

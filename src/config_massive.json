@@ -1,17 +1,17 @@
 {
-    "name": "MSCBAM50_org",
+    "name": "MSMLA18",
     "n_gpu": 1,
     "arch": {
-        "type": "MSCBAM50_org",
+        "type": "MSMLA18",
         "args": {
-            "init_band": 3,
+            "init_band": 10,
             "window": 48
         }
     },
     "data_loader": {
         "type": "LCZh5DataLoader",
         "args": {
-            "data_dir": "E:\\ISPRS\\geographic_split/onlyaux\\standard_only_osmdsmlulc_win48_split0.125_test.h5",
+            "data_dir": "C:\\Users\\minho-pc\\Documents\\GitHub\\LCZ_MSMLA\\data\\standard_all_win48_split0.125_train.h5",
             "batch_size": 32,
             "shuffle": true,
             "num_workers": 0
@@ -20,7 +20,7 @@
     "val_data_loader": {
         "type": "LCZh5DataLoader",
         "args": {
-            "data_dir": "E:\\ISPRS\\geographic_split/onlyaux\\standard_only_osmdsmlulc_win32_split0.125_test.h5",
+            "data_dir": "C:\\Users\\minho-pc\\Documents\\GitHub\\LCZ_MSMLA\\data\\standard_all_win48_split0.125_val.h5",
             "batch_size": 32,
             "shuffle": true,
             "num_workers": 0
