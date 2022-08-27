@@ -31,8 +31,7 @@ $ conda env create --name msmla --file environment.yml
 $ conda activate msmla 
 $ cd src
 ```
-3. Download train, test, validation sample .h5 files. The .rtf text file in *LCZ_MSMLA/data* folder contains a download link. Make sure to move the .h5 files into the *LCZ_MSMLA/data* folder.
-
+3. Download train, test, validation sample .h5 files. The [data_link.rtf](data/data_link.rtf) text file in the LCZ_MSMLA/data folder contains a download link. Make sure to move the .h5 files into the LCZ_MSMLA/data folder.
 4. Run the train.py code
 ```
 $ python main.py --path /YOUR/LOCAL/DIRECTORY/LCZ_MSMLA # Only change /YOUR/LOCAL/DIRECTORY without " "
