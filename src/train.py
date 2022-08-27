@@ -7,10 +7,10 @@ Contact : mhk93@snu.ac.kr
 ### Libraries
 import numpy as np
 import matplotlib.pyplot as plt
-import os, datetime, warnings, glob, json, h5py
+import os, datetime, warnings, glob, json, h5py, argparse
 
 ### Deep learning libraries
-import tensorflow # TF 2.1
+import tensorflow # TF 2.3
 from tensorflow.keras.callbacks import EarlyStopping,ModelCheckpoint
 # from tensorflow.keras.callbacks import CSVLogger ## For csv logging
 import albumentations as A
@@ -48,11 +48,15 @@ def checknum(filename):
         
 def jsondump(model, jsonfile, filename):
     
+    print('Model : ', model)
+    print('jsonfile : ', jsonfile)
+    print('filename : ', filename)
+
     test_filename = os.path.join(os.path.dirname(filename), os.path.basename(filename).replace('train', 'val'))
-    
+
     with open(jsonfile) as f:
         config = json.load(f)
-    
+
     ### Args to be modified in json file 
     config['name'] = model
     config['arch']['type'] = model
@@ -99,17 +103,17 @@ def train(model,trainNumber,validationNumber,class_weights,filename,batchsize,fi
     # csv_logger = CSVLogger("saved/log/"+tb_name+".csv", append=True)
     modelbest = 'saved/model/'+tb_name+'.hdf5'
     checkpoint = ModelCheckpoint(filepath=modelbest, monitor='val_accuracy', verbose=1, save_best_only=True, save_weights_only=True, mode='auto', period=1)
-
+    
     # Train    
     history = net.fit_generator(MyGenerator(train_file, batch_size=batchsize, augmentations=augmentations, shuffle=True),
-                        workers=1,
-                        steps_per_epoch = trainNumber//batchsize,                    
-                        validation_data = MyGenerator(validation_file, batch_size=batchsize, augmentations=augmentations, shuffle=True),
-                        validation_steps = validationNumber//batchsize,
-                        epochs=epochs,
-                        max_queue_size=100,
-                        class_weight = class_weights,
-                        callbacks=[early_stopping, lr_sched,checkpoint]) # If using csv logging, add csv_logger
+                    workers=1,
+                    steps_per_epoch = trainNumber//batchsize,                    
+                    validation_data = MyGenerator(validation_file, batch_size=batchsize, augmentations=augmentations, shuffle=True),
+                    validation_steps = validationNumber//batchsize,
+                    epochs=epochs,
+                    max_queue_size=100,
+                    class_weight = dict(enumerate(class_weights)),
+                    callbacks=[early_stopping, lr_sched,checkpoint]) # If using csv logging, add csv_logger
 
     # Summarize history for accuracy
     plt.plot(history.history['accuracy'])
@@ -125,23 +129,28 @@ def train(model,trainNumber,validationNumber,class_weights,filename,batchsize,fi
 
 
 ### Main Processing
-os.chdir(r'E:/ISPRS') # Change to base directory
-jsonfile = r'E:/ISPRS/config_massive.json' # Set json path to call parameters (config_massive.json)
-dataset_path = r'E:\ISPRS\geographic_split/onlyaux' # Path to .h5 files
+if __name__ == '__main__':
 
-# Load filenames
-filelist = glob.glob(dataset_path + '/*.h5')
-filelist = [x for x in filelist if 'train' in x]
-train_filelist = [x for x in filelist if '_all_win' in os.path.basename(x)]
+    parser = argparse.ArgumentParser(description='Base Path')
+    parser.add_argument('--path', type=str, default = None)
+    args = parser.parse_args()
+    path = args.path # Set base path to "\LCZ_MSMLA\"
 
-print('\n'.join(train_filelist))
+    jsonfile = os.path.join(path, 'src/config_massive.json') # Set json path to call parameters (config_massive.json)
 
-# Train models
-for model in ['MSMLA18', 'MSMLA50']:
+    # Load filenames
+    filelist = glob.glob(path + '/*.h5')
+    filelist = [x for x in filelist if 'train' in x]
+    train_filelist = [x for x in filelist if '_all_win' in os.path.basename(x)]
 
-    for filename in train_filelist:
-        print(filename)
-        jsondump(model, jsonfile, filename) 
-        trainNumber,validationNumber,class_weights = checknum(filename)
-        train(model,trainNumber,validationNumber,class_weights,filename,batchsize=32,filter_depth=16)
+    # print('\n'.join(train_filelist))
+
+    # Train models
+    for model in ['MSMLA18']:
+
+        for filename in train_filelist:
+
+            jsondump(model, jsonfile, filename) 
+            trainNumber,validationNumber,class_weights = checknum(filename)
+            train(model,trainNumber,validationNumber,class_weights,filename,batchsize=32,filter_depth=16)
    

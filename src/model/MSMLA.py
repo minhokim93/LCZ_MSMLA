@@ -7,12 +7,12 @@ Contact : mhk93@snu.ac.kr
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import *
 
-from utils import se_convolutional_block, se_identity_block
-from utils import cbam_block as cbam
+from model.utils import se_convolutional_block, se_identity_block
+from model.utils import cbam_block as cbam
 
 # MSMLA18 and MSMLA50 models used as MSMLA-net
 
-def MSMLA18(input_shape):
+def MSMLA18(input_shape, depth):
 
     # Input stage
     inputs = Input(input_shape)
@@ -60,7 +60,7 @@ def MSMLA18(input_shape):
     return model
 
 
-def MSMLA50(input_shape):
+def MSMLA50(input_shape, depth):
 
     # Input stage
     inputs = Input(input_shape)

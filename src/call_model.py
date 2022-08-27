@@ -9,16 +9,16 @@ from tensorflow.keras.layers import *
 
 # Call models
 
-def get_model(model, input_shape):
+def get_model(model, input_shape, d):
         
     # RESNET MODELS
     if model == 'MSMLA18':
         from model.MSMLA import MSMLA18
-        net = MSMLA18()
+        net = MSMLA18(input_shape, [d, 2*d, 3*d])
         net.build(input_shape)
     elif model == 'MSMLA50':
         from model.MSMLA import MSMLA50
-        net = MSMLA50()
+        net = MSMLA50(input_shape, [d, 2*d, 3*d])
         net.build(input_shape)
 
     inputs = Input(shape=input_shape)

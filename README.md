@@ -10,6 +10,32 @@ The model is shown below:
 
 All experiments were trained from scratch and were performed using an Intel Core i7-6700 CPU at 3.40 GHz and an NVIDIA GeForce RTX 2070 Super Graphics Processor Unit (GPU) with 8 GB of memory. Python 3.7.9 was used with Tensorflow 2.3.0. For training hyperparameters, an early stop of 15 epochs, a learning rate of 0.002, and a decay factor of 0.004 were used. The adaptive moment estimation (adam) optimizer was chosen to minimize the cross-entropy loss function. Filter weights were initialized using “He normal” initialization.
 
+Requirements
+---------------------
+- python=3.7.9
+- tensorflow-gpu=2.3
+- tensorflow-addons
+- scikit-learn
+- matplotlib
+- pandas
+- albumentations (pip)
+
+Usage
+---------------------
+1. Install a new conda environment
+```
+$ conda env create --name msmla--file environment.yml
+```
+2. Activate the new environment and navigate to the "src" folder
+```
+$ conda activate msmla 
+$ cd src
+```
+3. Run the train.py code
+```
+$ python main.py --path /YOUR/LOCAL/DIRECTORY/HERE/LCZ_MSMLA
+```
+
 LCZ Classification
 ---------------------
 Classification accuracy results of benchmark and proposed models using “All + Ancillary” (Sentinel-2 10 bands, OSM, DSM, NLCM) data with 48x48 pixel patches. Please refer to the paper for more results and details.
